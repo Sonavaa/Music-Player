@@ -8,19 +8,24 @@ html {
   box-sizing: border-box;
 }
 body {
+  width: 100%;
+  min-height: 100vh;
   background-color: #b7b7b7;
 }
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 .playList {
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 32px;
+  padding: 32px 32px 34px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .playList .heading {
   display: flex;
@@ -80,7 +85,7 @@ body {
     align-items: space-between;
     font-size: 14px;
     font-weight: 500;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 .songs .song{
     display: flex;
@@ -88,7 +93,7 @@ body {
     align-items: baseline;
     width: 100%;
     border-bottom: 1px solid #b7b7b7;
-    margin-top: 10px;
+    margin-top: 8px;
     padding: 8px 0;
     cursor: pointer;
 }
@@ -109,13 +114,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px;
+    padding: 24px 100px 60px 100px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .playing-music .image img{
     width: 300px;
     height: 300px;
     margin-top: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 .playing-music h5{
 font-weight: 500;
@@ -127,4 +134,52 @@ font-weight: 500;
 .playing-music #artist{
     color: #B7B7B7;
 font-weight: 500;
+margin-top: 5px;
+}
+.playing-music hr{
+  width: 300px;
+  margin: 20px auto 0;
+  height: 3px;
+  color: #B7B7B7;
+  background-color: #B7B7B7;
+  border-radius: 3px 0px 0px 3px;
+}
+.duration{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  color: #B7B7B7;
+font-size: 14px;
+font-weight: 500;
+margin-top: 7px;
+margin-bottom: 15.5px;
+}
+.playing-music .buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 245px;
+}
+.playing-music .buttons img{
+  height: 75px;
+  width: 75px;
+}
+.playing-music .buttons #previous{
+  background-color: #FFF;
+  padding: 26px 16px;
+  border-radius:50px;
+  cursor: pointer;
+}
+.playing-music .buttons #play{
+  background-color: #FFF;
+  padding: 25px 21px;
+  padding-left: 25px;
+  border-radius:50px;
+  cursor: pointer;
+}
+.playing-music .buttons #next{
+  background-color: #FFF;
+  padding: 26px 16px;
+  border-radius:50px;
+  cursor: pointer;
 }
