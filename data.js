@@ -35,4 +35,5 @@ const songs = [
     title: "I Know I'm Not The Only One",
     duration: "3:57",
   },
+
 ];

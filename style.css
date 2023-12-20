@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    padding: 20px 0;
 }
 .playList {
   background-color: #fff;
@@ -26,6 +26,7 @@ body {
   padding: 32px 32px 34px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  height: 647px;
 }
 .playList .heading {
   display: flex;
@@ -33,9 +34,14 @@ body {
   align-items: start;
   gap: 16px;
 }
-.heading .image img {
-  width: 150px;
-  height: 150px;
+.heading .heading-image {
+  display: grid;
+  grid-template-columns: repeat(2,75px);
+  grid-template-rows: repeat(2,75px);
+  overflow: hidden;
+}
+.heading .heading-image img{
+  width: 100%;
 }
 .song-info {
   display: flex;
@@ -170,10 +176,10 @@ margin-bottom: 15.5px;
   border-radius:50px;
   cursor: pointer;
 }
-.playing-music .buttons #play{
+.playing-music .buttons #play-pause{
   background-color: #FFF;
-  padding: 25px 21px;
-  padding-left: 25px;
+  padding: 15px 27px;
+  padding-left: 27px;
   border-radius:50px;
   cursor: pointer;
 }
