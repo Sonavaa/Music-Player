@@ -16,6 +16,8 @@ const previous_btn = document.getElementById("previous")
 const play_pause_btn = document.getElementById("play-pause")
 const next_btn = document.getElementById("next")
 
+const bar = document.querySelector(".bar");
+const loading_bar = document.querySelector(".loading_bar");
 
 let index = 0;
 let isPlaying = false;
@@ -66,6 +68,11 @@ const displayPlayList = () => {
     playing_song_name.textContent = `${songs[index].title}`
     playing_song_artist.textContent =  `${songs[index].artist}`
     playing_song.src = `./assets/audio/${songs[index].name}.mp3`
+    total_time.textContent = `${songs[index].duration}`
+
+    if(index ===5){
+      playing_song_name.style.fontSize = "21px"
+    }
   }
 
   const playSong = () => {
@@ -95,20 +102,32 @@ previous_btn.addEventListener("click", () => {
     {
     song.index = index--;
     }
-    else{
-      song.index = songs.length - 1
+    else if(index === 0){
+      index = songs.length
+      index--;
     }
+    else{
+      song.index = songs.length
+      index--;
+    }
+  console.log(index);
+
     displayPlayingSong()
     playSong()
 })
 
 next_btn.addEventListener("click", () => {
-  if(index<songs.length-1)
+  if(index < songs.length-1)
   {
   song.index = index++;
   }
+  else if(index === songs.length-1){
+    index=0
+    index++;
+  }
   else{
     song.index = 0
+    index++;
   }
   displayPlayingSong()
   playSong()
@@ -152,6 +171,27 @@ window.addEventListener("keydown",  function(event){
     playSong()
 }
 })
+
+song.addEventListener("timeupdate", () => {
+const {currentTime, duration} = song;
+
+const minutes = Math.floor(currentTime / 60);
+const seconds = Math.floor(currentTime % 60);
+
+current_time.textContent = ` ${minutes}:${String(seconds).padStart(2, '0')}`
+
+loading_bar.style.width = `${(currentTime  / duration) * 100}%`
+
+});
+
+bar.addEventListener("click", (event) => {
+const clicked = event.offsetX
+const totalWidth = bar.clientWidth
+
+song.current_time = (clicked / totalWidth) * song.duration
+
+})
+
 
 
 

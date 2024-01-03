@@ -123,6 +123,8 @@ body {
     padding: 24px 100px 60px 100px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+  height: 647px;
+
 }
 .playing-music .image img{
     width: 300px;
@@ -142,13 +144,24 @@ font-weight: 500;
 font-weight: 500;
 margin-top: 5px;
 }
-.playing-music hr{
+.playing-music ._bar .bar{
   width: 300px;
   margin: 20px auto 0;
   height: 3px;
   color: #B7B7B7;
   background-color: #B7B7B7;
-  border-radius: 3px 0px 0px 3px;
+  border-radius: 3px;
+  position: relative;
+}
+.playing-music ._bar .loading_bar{
+  /* width: 200px; */
+  height: 3.5px;
+  color: red;
+  background-color: red;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 9999;
+  margin-top: -3px;
 }
 .duration{
   width: 300px;
